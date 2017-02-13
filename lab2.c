@@ -12,22 +12,47 @@ int correctness_vklad(int vklad){
     }
 }
 
-//int vklad_time_of_expiry(int date1, int sum_vklad){
-//    int a, sum_vklad_percent;
-     
-//}
+int vklad_time_of_expiry(int date1, int sum_vklad){
+    int a, sum_vklad_percent;
+    
+    if (sum_vklad < 100){
+        if ((date1 >= 0) && (date1 <= 30)){
+            a = (sum_vklad * 10)/100;
+            sum_vklad = sum_vklad - a;
+            return sum_vklad;
+        }
+        if ((date1 >= 31) && (date1 <= 120)){
+            a = (sum_vklad * 2)/100;
+            sum_vklad = sum_vklad + a;
+            return sum_vklad;
+        }
+        if ((date1 >= 121) && (date1 <= 240)){
+            a = (sum_vklad * 6)/100;
+            sum_vklad = sum_vklad + a;
+            return sum_vklad;
+        }
+        if ((date1 >= 241) && (date1 <= 365)){
+            a = (sum_vklad * 12)/100;
+            sum_vklad = sum_vklad + a;
+            return sum_vklad;
+        }
+
+    } 
+}
 
 int main()
 {
     int date, vklad;
     
-    printf("Введите срок вклада в тыс.руб:");
+    printf("Введите срок вклада:");
     scanf("%d", &date);
-    printf("Введите сумму вклада:");
+    printf("Введите сумму вклада в тыс. руб:");
     scanf("%d", &vklad);
     
     if ((correctness_date(date) == 1) && (correctness_vklad(vklad) == 1)){
-        printf("корректно");
+        printf("корректно/n");
+        vklad = vklad_time_of_expiry(date, vklad);
+        printf("сумму вклада:%d",vklad );    
     }
     
     return 0;
