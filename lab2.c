@@ -16,7 +16,7 @@ int vklad_time_of_expiry(int date1, int sum_vklad){
     int a, sum_vklad_percent;
     
     if (sum_vklad <= 100){
-        if ((date1 >= 0) && (date1 <= 30)){
+        if   ((date1 >= 0) && (date1 <= 30)){
             a = (sum_vklad * 10)/100;
             sum_vklad = sum_vklad - a;
             return sum_vklad;
