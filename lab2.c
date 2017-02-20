@@ -4,16 +4,18 @@ int correctness_date(int date){
     if ((date >= 0) && (date <= 365)){
         return 1;
     }
+    return 0;
 }
 
 int correctness_vklad(int vklad){
     if (vklad >= 10){ 
         return 1;
     }
+    return 0;
 }
 
 int vklad_time_of_expiry(int date1, int sum_vklad){
-    int a, sum_vklad_percent;
+    int a;
     
     if (sum_vklad <= 100){
         if   ((date1 >= 0) && (date1 <= 30)){
@@ -59,7 +61,8 @@ int vklad_time_of_expiry(int date1, int sum_vklad){
             return sum_vklad;
         }
 
-    } 
+    }
+     
 }
 
 int main()
