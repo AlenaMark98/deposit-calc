@@ -62,7 +62,7 @@ int vklad_time_of_expiry(int date1, int sum_vklad){
         }
 
     }
-     
+    return 0; 
 }
 
 int main()
