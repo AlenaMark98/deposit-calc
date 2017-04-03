@@ -1,5 +1,6 @@
 #ifndef H_DEPOSIT
 #define H_DEPOSIT
+#include <stdio.h>
 
 int correctness_date(int date);
 int correctness_vklad(int vklad);

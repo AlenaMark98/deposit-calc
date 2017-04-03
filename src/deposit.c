@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "deposit.h"
 
 int correctness_date(int date){
